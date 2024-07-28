@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>facebook </title>
+    <link rel = "icon" href ="picture_facebook_.PNG" >
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="intro">
+                 
+        <h1 class="logo-headr">
+            <div>
+                <img src="facebook.jpg" alt="" id="fc"> 
+            </div>
+            <span class="logo" >FA</span> <span class="logo">CEBOOK   </span>
+            <br>
+            <div class="itemcEnter">
+                <span id="reloddata">  </span>
+            </div>
+             
+        </h1>
+       
+    </div>
+
+ 
+    <script >
+
+
+const intro = document.querySelector(".intro")
+const logo = document.querySelector(".logo-headr")
+const logospan = document.querySelectorAll(".logo")
+const reloddata = document.getElementById('reloddata')
+window.addEventListener("DOMContentLoaded",()=>{
+      
+  setTimeout(()=>{
+    logospan.forEach((span,idx)=>{
+        setTimeout(()=>{
+            span.classList.add("active")
+        },(idx+1)*400)
+    })
+
+
+setTimeout(()=>{
+    logospan.forEach((span,idx)=>{
+        setTimeout(()=>{
+            span.classList.remove("active")
+            span.classList.add("fade")
+        },(idx+1)*50)
+    })
+},3100)
+
+     
+
+
+  setTimeout(()=>{
+     
+    location.href= ("facebook.home.html")
+    
+ },3100)
+
+ 
+
+
+
+
+
+
+
+
+
+  })
+
+
+  let counter = 0; // Counter variable to track the number of iterations
+
+const intervalId = setInterval(() => {
+  reloddata.innerHTML += `  .`; // Add your desired logic here
+
+  counter++; // Increment the counter
+
+  if (counter === 3) {
+    clearInterval(intervalId); // Clear the interval when counter reaches 5
+  }
+}, 950);
+
+
+})
+
+ 
+    </script>
+    <style>
+ .logo{
+    color:rgb(43, 46, 122);
+    font-size: 33px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ }
+        #reloddata{
+            color: rgb(0, 0, 189);
+          
+           
+        }
+        #fc{
+            margin-left: 40px;
+            width: 90px;
+            border-radius: 100%;
+        }
+        .itemcEnter{
+            text-align: center;
+        }
+        *{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+header{
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 80px;
+}
+header h4{
+    position: absolute;
+    left: 10%;
+    bottom: 1rem;
+    font-size: 1.6rem;
+
+}
+
+
+/* splach screen*/
+
+
+.intro{
+   position: fixed;
+   z-index: 1;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100vh;
+ 
+   transition:1s ;
+ 
+}
+
+.logo-headr{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #fff;
+ 
+}
+
+
+.logo{
+    position:relative;
+    display: inline-block;
+    bottom: -20px;
+    opacity: 0;
+}
+
+.logo.active{
+     bottom: 0;
+      opacity: 1;   /*   // this for  work code  */
+      transition: ease-in-out 0.5;
+    
+}
+
+
+.logo.fade{
+   bottom: 158px;
+   opacity: 0;
+   transition: ease-in-out 0.5;
+}
+
+    </style>
+</body>
+</html>
